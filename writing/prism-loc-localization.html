@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,10 +19,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Zilla+Slab:wght@500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../assets/style.css">
-  <script>document.documentElement.classList.remove('no-js');</script>
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -56,14 +56,14 @@
     <div class="container">
       <article class="article">
         <h1>Inside prism_loc: one map→odom contract for three localizers</h1>
-        <p class="dek">A case study on <strong>prism_loc</strong> — pluggable LiDAR localization for ROS 2. Why the estimator cores stay middleware-free, how a single map→odom contract lets three very different estimators swap in place, and what that design costs.</p>
+        <p class="dek">A case study on <strong>prism_loc</strong>, pluggable LiDAR localization for ROS 2. Why the estimator cores stay middleware-free, how a single map→odom contract lets three very different estimators swap in place, and what that design costs.</p>
         <p class="byline">Jung Mo Kang<span class="byline-sep" aria-hidden="true">·</span><span class="byline-meta">2026</span><span class="byline-sep" aria-hidden="true">·</span><span class="byline-meta">6 min read</span></p>
 
-        <p><strong>prism_loc</strong> is a pluggable LiDAR localization stack for ROS 2. It ships three estimators — 2D Monte Carlo localization (MCL), 3D NDT-MCL, and a LiDAR + IMU + RTK-GNSS error-state Kalman filter (ESKF) — behind one interface, over middleware-free C++17 cores, with a single map→odom contract at the output. This is the reasoning behind that shape.</p>
+        <p><strong>prism_loc</strong> is a pluggable LiDAR localization stack for ROS 2. It ships three estimators behind one interface: 2D Monte Carlo localization (MCL), 3D NDT-MCL, and a LiDAR + IMU + RTK-GNSS error-state Kalman filter (ESKF), all over middleware-free C++17 cores, with a single map→odom contract at the output. This is the reasoning behind that shape.</p>
 
         <h2><span class="h2-num">1.</span> The problem: localizers get welded to one algorithm and to ROS</h2>
         <p>Most localization code starts life fused to two things at once: the specific estimator it was written for, and the middleware it was first deployed on. A 2D particle filter grows ROS message types, TF lookups, and parameter-server calls deep inside its update loop. When the next robot needs a 3D method, or a GNSS-aided filter for an outdoor run, the "estimator" turns out to be inseparable from the transport, and the work restarts.</p>
-        <p>So the goal for prism_loc was not "write a better particle filter." It was to make the <em>estimator</em> a self-contained thing you can hold in your hand — swappable, testable in isolation — while the choice of 2D versus 3D versus fused becomes a configuration decision, not a rewrite.</p>
+        <p>So the goal for prism_loc was not "write a better particle filter." It was to make the <em>estimator</em> a self-contained thing you can hold in your hand (swappable, testable in isolation) while the choice of 2D versus 3D versus fused becomes a configuration decision, not a rewrite.</p>
 
         <h2><span class="h2-num">2.</span> One contract: map→odom</h2>
         <p>The design pivots on a single shared output. Whatever estimator is running, its job is to produce one thing: the correction from the map frame to the odometry frame. Odometry already carries the robot forward continuously; localization's real responsibility is only to keep that dead-reckoned frame pinned to the map. Naming that as the one contract every backend must satisfy is what makes the backends interchangeable.</p>
@@ -72,14 +72,14 @@
         <h2><span class="h2-num">3.</span> Three localizers behind the same seam</h2>
         <p>With the contract fixed, three estimators that share almost no math can live behind the same seam:</p>
         <ul class="article-list">
-          <li><strong>2D MCL.</strong> A particle filter against an occupancy grid — the reliable default for planar indoor robots on a known floor.</li>
+          <li><strong>2D MCL.</strong> A particle filter against an occupancy grid, the reliable default for planar indoor robots on a known floor.</li>
           <li><strong>3D NDT-MCL.</strong> Monte Carlo localization scored with the normal-distributions transform, for multi-storey and full-6-DoF settings where a flat-floor assumption breaks.</li>
           <li><strong>LiDAR + IMU + RTK-GNSS ESKF.</strong> An error-state Kalman filter that fuses scan geometry with inertial prediction and RTK-GNSS, for runs where an absolute reference is available and drift has to be bounded over long distances.</li>
         </ul>
-        <p>These are genuinely different estimators — different state, different sensors, different failure modes. What lets them coexist is that none of them owns the interface; they all just emit map→odom.</p>
+        <p>These are genuinely different estimators: different state, different sensors, different failure modes. What lets them coexist is that none of them owns the interface; they all just emit map→odom.</p>
 
         <h2><span class="h2-num">4.</span> Middleware-free cores, ROS 2 at the edges</h2>
-        <p>Each estimator core is plain C++17 with no dependency on the middleware. ROS 2 lives at the edges — subscriptions in, the transform out — as a thin adapter wrapped around a core that never imports it. That boundary is a deliberate choice, and it pays for itself twice.</p>
+        <p>Each estimator core is plain C++17 with no dependency on the middleware. ROS 2 lives at the edges (subscriptions in, the transform out) as a thin adapter wrapped around a core that never imports it. That boundary is a deliberate choice, and it pays for itself twice.</p>
         <p>First, testability. A core that takes scans and poses and returns a correction can be exercised directly, deterministically, without spinning up a graph of nodes. That is what makes it honest to say every claim is backed by tests and committed evaluation artifacts rather than a one-off demo: the thing being evaluated is a pure function of its inputs.</p>
         <p>Second, portability. The estimator is not hostage to one distro's message types or transport. The middleware can move underneath it and the math does not care.</p>
 
@@ -92,7 +92,7 @@
         </ul>
 
         <h2>What I'd carry forward</h2>
-        <p>The durable idea here is not the particle filter or the NDT scoring — it is the discipline of naming a single output contract and refusing to let any one algorithm own it. That is what turned "a localizer" into a place you can plug localizers. The same move generalizes: its sibling project applies the identical middleware-free-core, ROS-2-at-the-edges split to lifelong mapping.</p>
+        <p>The durable idea here is not the particle filter or the NDT scoring; it is the discipline of naming a single output contract and refusing to let any one algorithm own it. That is what turned "a localizer" into a place you can plug localizers. The same move generalizes: its sibling project applies the identical middleware-free-core, ROS-2-at-the-edges split to lifelong mapping.</p>
 
         <hr>
 

@@ -18,8 +18,8 @@
   --on-accent: #241806;   /* near-black text on amber buttons */
 
   --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-  --sans: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  --display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --sans: 'Hanken Grotesk', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --display: 'Zilla Slab', 'Hanken Grotesk', Georgia, serif;
 
   --container: 1080px;
   --gutter: 24px;
@@ -125,36 +125,13 @@ ul { margin: 0; padding: 0; list-style: none; }
   .how-layout .grid-how { grid-template-columns: repeat(2, 1fr); }
 }
 
-.section-head { margin-bottom: 44px; }
-
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--mono);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin: 0 0 18px;
-}
-
-/* Per-section index number — a landmark that differs section to section,
-   replacing the identical decorative tick. */
-.eyebrow-num {
-  font-size: 12px;
-  color: var(--text-2);
-  padding: 2px 8px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  letter-spacing: 0.04em;
-}
+.section-head { margin-bottom: 44px; max-width: 62ch; }
 
 .section-title {
-  font-size: 36px;
-  line-height: 1.1;
+  font-size: clamp(28px, 4.4vw, 40px);
+  line-height: 1.08;
   margin-bottom: 16px;
+  text-wrap: balance;
 }
 
 .section-intro {
@@ -227,7 +204,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   top: 0;
   z-index: 100;
   height: 64px;
-  background: rgba(11, 17, 32, 0.72);
+  background: rgba(15, 17, 22, 0.78);
   backdrop-filter: saturate(160%) blur(12px);
   -webkit-backdrop-filter: saturate(160%) blur(12px);
   border-bottom: 1px solid var(--border);
@@ -472,53 +449,42 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hero-links a.hero-email { color: var(--accent); font-weight: 600; }
 .hero-links a.hero-email:hover { color: var(--accent-hover); }
 
-/* ----- Stats strip ---------------------------------------------------------*/
+/* ----- Figures ribbon ------------------------------------------------------
+   A compact inline credential band, not a big-number stat template: the
+   figures read as one line of provenance, each numeral flagged in mono. */
 .stats {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 .stats .container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  padding-block: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px 32px;
+  padding-block: 22px;
 }
 .stat {
-  padding: 24px 0;
   display: flex;
   align-items: baseline;
-  gap: 16px;
+  gap: 10px;
 }
-.stat + .stat { border-top: 1px solid var(--border); }
 .stat .num {
   font-family: var(--mono);
-  font-size: 30px;
+  font-size: 17px;
   font-weight: 600;
   color: var(--accent);
-  line-height: 1;
-  letter-spacing: -0.02em;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
   flex: none;
-  min-width: 2.6em;
 }
 .stat .label {
-  font-size: 15px;
+  font-size: 14.5px;
   color: var(--text-2);
-  line-height: 1.45;
+  line-height: 1.35;
 }
 
 @media (min-width: 768px) {
-  .stats .container { grid-template-columns: repeat(3, 1fr); }
-  .stat {
-    flex-direction: column;
-    gap: 10px;
-    padding: 32px 28px 32px 0;
-  }
-  .stat + .stat {
-    border-top: none;
-    border-left: 1px solid var(--border);
-    padding-left: 28px;
-  }
-  .stat .num { min-width: 0; }
+  .stats .container { gap: 12px 44px; }
 }
 
 /* ----- Card grids ----------------------------------------------------------*/
@@ -535,7 +501,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 @media (min-width: 1024px) {
   .grid-os { grid-template-columns: repeat(3, 1fr); }
-  .grid-how { grid-template-columns: repeat(4, 1fr); }
 }
 
 .card {
@@ -661,19 +626,25 @@ ul { margin: 0; padding: 0; list-style: none; }
   opacity: 0.7;
 }
 
-/* How-I-Work card */
-.how-card .how-num {
-  font-family: var(--mono);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--accent);
+/* How-I-Work — a principle spec-list, not a grid of identical cards.
+   Rows are separated by hairlines and read as an engineering datasheet. */
+.grid-how { gap: 0 44px; }
+.how-item {
+  padding: 22px 0;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
-.how-card .how-title {
-  font-size: 17px;
-  font-weight: 700;
+.how-item .how-title {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
   color: var(--text);
 }
-.how-card .how-body {
+.how-item .how-body {
   font-size: 15px;
   color: var(--text-2);
   line-height: 1.6;
@@ -909,18 +880,18 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .article strong { color: var(--text); font-weight: 700; }
 
-/* Bolded-lesson callouts */
+/* Bolded-lesson callouts — full-bordered tinted panel, no side stripe. */
 .lesson {
-  border-left: 3px solid var(--accent);
   background: var(--accent-dim);
-  padding: 16px 20px;
-  border-radius: 0 8px 8px 0;
-  margin-block: 24px;
+  border: 1px solid var(--accent-30);
+  padding: 18px 22px;
+  border-radius: 12px;
+  margin-block: 28px;
   font-size: 17px;
   line-height: 1.6;
   color: var(--text);
 }
-.lesson strong { color: var(--text); }
+.lesson strong { color: var(--accent-hover); }
 
 .article .article-footnote {
   font-size: 15px;
@@ -931,27 +902,31 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .article-footer { border-top: 1px solid var(--border); margin-top: 64px; }
 
-/* ----- Reveal animation (JS-driven, reduced-motion-safe) -------------------*/
-.reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 500ms ease-out, transform 500ms ease-out;
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: none;
-  will-change: auto;   /* release the compositor layer once settled */
-}
+/* ----- Reveal animation ----------------------------------------------------
+   Content is visible by default. The entrance only applies when JS is present
+   AND motion is allowed; a headless/hidden-tab render (no `.js`, or the JS
+   failsafe) always shows the fully-composed page. The transition never gates
+   whether the content can be seen. */
+.reveal { opacity: 1; transform: none; }
 
-/* Intra-grid stagger: cards in a grid resolve in sequence, not as one slab. */
-.grid .reveal:nth-child(2) { transition-delay: 70ms; }
-.grid .reveal:nth-child(3) { transition-delay: 140ms; }
-.grid .reveal:nth-child(4) { transition-delay: 210ms; }
-.grid .reveal:nth-child(5) { transition-delay: 280ms; }
-.grid .reveal:nth-child(6) { transition-delay: 350ms; }
-
-/* JS-disabled fallback: content is visible by default via .no-js on <html> */
-.no-js .reveal { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 550ms cubic-bezier(0.22, 1, 0.36, 1),
+                transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  /* Intra-grid stagger: cards resolve in sequence, not as one slab. */
+  .js .grid .reveal:nth-child(2) { transition-delay: 60ms; }
+  .js .grid .reveal:nth-child(3) { transition-delay: 120ms; }
+  .js .grid .reveal:nth-child(4) { transition-delay: 180ms; }
+  .js .grid .reveal:nth-child(5) { transition-delay: 240ms; }
+  .js .grid .reveal:nth-child(6) { transition-delay: 300ms; }
+}
 
 /* ----- Responsive tweaks ---------------------------------------------------*/
 @media (max-width: 767px) {
@@ -973,5 +948,5 @@ ul { margin: 0; padding: 0; list-style: none; }
     transition-duration: 0.001ms !important;
   }
   .reveal { opacity: 1; transform: none; }
-  .btn:hover, .card-link:hover, .entry:hover, .how-card:hover { transform: none; }
+  .btn:hover, .card-link:hover { transform: none; }
 }

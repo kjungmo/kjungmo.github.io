@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,10 +19,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Zilla+Slab:wght@500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/style.css">
-  <script>document.documentElement.classList.remove('no-js');</script>
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -62,7 +62,7 @@
         <h1 id="hero-h1" class="reveal">Jung Mo Kang</h1>
         <p class="role reveal">Robotics Software Engineer<span class="role-sep">·</span><span class="role-years">6 yrs</span></p>
         <p class="hero-available reveal"><span class="dot" aria-hidden="true"></span><span>Open to conversations about robotics software, ROS 2 architecture, and AI-native engineering practice.</span></p>
-        <p class="lead reveal">I build autonomous mobile robots — and the engineering system around foundation models that lets them ship safely.</p>
+        <p class="lead reveal">I build autonomous mobile robots, and the engineering system around foundation models that lets them ship safely.</p>
         <div class="hero-ctas reveal">
           <a class="btn btn-primary" href="#open-source">
             View my open source
@@ -118,16 +118,15 @@
     <section class="section" id="open-source" aria-labelledby="os-title">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow"><span class="eyebrow-num">01</span>Open Source</p>
           <h2 class="section-title" id="os-title">Robotics tools, built end-to-end</h2>
-          <p class="section-intro">Estimator cores kept free of middleware, ROS 2 wired in only at the edges, and every performance claim backed by tests plus committed evaluation artifacts — not screenshots.</p>
+          <p class="section-intro">Estimator cores kept free of middleware, ROS 2 wired in only at the edges, and every performance claim backed by tests plus committed evaluation artifacts, not screenshots.</p>
         </div>
 
         <div class="grid grid-os">
           <article class="card card-study reveal">
             <div class="card-badge">Case study</div>
             <h3 class="card-name">prism_loc</h3>
-            <p class="card-desc">Pluggable LiDAR localization for ROS 2 — 2D MCL, 3D NDT-MCL, and LiDAR+IMU+RTK-GNSS ESKF fusion over middleware-free C++17 estimator cores, one map→odom contract.</p>
+            <p class="card-desc">Pluggable LiDAR localization for ROS 2: 2D MCL, 3D NDT-MCL, and LiDAR+IMU+RTK-GNSS ESKF fusion over middleware-free C++17 estimator cores, one map→odom contract.</p>
             <div class="card-chips chips">
               <span class="chip">ROS 2</span><span class="chip">C++17</span><span class="chip">MCL</span><span class="chip">ESKF</span>
             </div>
@@ -139,7 +138,7 @@
 
           <article class="card card-link reveal">
             <h3 class="card-name">strata</h3>
-            <p class="card-desc">Pluggable lifelong LiDAR mapping for ROS 2 — selectable 2D occupancy / 3D voxel backends, Bayesian persistence with FreMEn periodicity, 6-DoF. Sibling of prism_loc.</p>
+            <p class="card-desc">Pluggable lifelong LiDAR mapping for ROS 2: selectable 2D occupancy / 3D voxel backends, Bayesian persistence with FreMEn periodicity, 6-DoF. Sibling of prism_loc.</p>
             <div class="card-chips chips">
               <span class="chip">ROS 2</span><span class="chip">mapping</span><span class="chip">lifelong</span>
             </div>
@@ -166,7 +165,7 @@
 
           <article class="card card-link reveal">
             <h3 class="card-name">amr_stack</h3>
-            <p class="card-desc">A complete AMR software stack written from scratch: 2D sim, log-odds mapping, scan-matching SLAM, MCL, A*+DWA planning, nav FSM, HRI GUI — pure Python plus C++ ROS 2 ports.</p>
+            <p class="card-desc">A complete AMR software stack written from scratch: 2D sim, log-odds mapping, scan-matching SLAM, MCL, A*+DWA planning, nav FSM, HRI GUI, all in pure Python plus C++ ROS 2 ports.</p>
             <div class="card-chips chips">
               <span class="chip">from scratch</span><span class="chip">SLAM</span><span class="chip">planning</span>
             </div>
@@ -175,7 +174,7 @@
 
           <article class="card card-link reveal">
             <h3 class="card-name">robo-ops</h3>
-            <p class="card-desc">Operator console for AMR/AGV fleet control — 30 interactive screens (dashboard, live map, remote control, KPI analytics) as a fully client-side React 19 + TypeScript app.</p>
+            <p class="card-desc">Operator console for AMR/AGV fleet control: 30 interactive screens (dashboard, live map, remote control, KPI analytics) as a fully client-side React 19 + TypeScript app.</p>
             <div class="card-chips chips">
               <span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">fleet ops</span>
             </div>
@@ -191,18 +190,17 @@
     <section class="section section--band" id="field-work" aria-labelledby="fw-title">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow"><span class="eyebrow-num">02</span>Field Work</p>
           <h2 class="section-title" id="fw-title">Production robotics, delivered on-site</h2>
           <p class="section-intro">Client and employer names withheld. What “on-site” meant here: months of bring-up on the factory floor, crash triage against real hardware, and pilots carried into commercial rollout.</p>
         </div>
 
         <div class="grid grid-field">
           <article class="card entry reveal">
-            <h3 class="entry-title">Factory logistics automation — AMR fleet</h3>
+            <h3 class="entry-title">Factory logistics automation: AMR fleet</h3>
             <p class="entry-role">AMR software engineer, on-site deployment</p>
             <ul class="bullets">
               <li>Built ROS-based AMR autonomy and the fleet-side ACS bridge protocol (WebSocket) connecting robots to the plant control system.</li>
-              <li>Automated mass installation and mapping/logging workflows, making a 30+ robot rollout at an overseas factory repeatable — the protocol carried the project into commercial rollout.</li>
+              <li>Automated mass installation and mapping/logging workflows, making a 30+ robot rollout at an overseas factory repeatable. The protocol carried the project into commercial rollout.</li>
               <li>Lived on-site for months of bring-up: crash triage with gdb, alarm-code and charging-sequence fixes on real hardware.</li>
             </ul>
             <div class="card-chips chips">
@@ -227,7 +225,7 @@
             <p class="entry-role">Bring-up → autonomy → certification</p>
             <ul class="bullets">
               <li>Brought a rider-carrying autonomous chair from bare hardware to a drivable, obstacle-avoiding system; tuned avoidance path planning for safety around people.</li>
-              <li>Passed public-institution certification testing — cleared for real-site service in a public museum setting.</li>
+              <li>Passed public-institution certification testing, cleared for real-site service in a public museum setting.</li>
             </ul>
             <div class="card-chips chips">
               <span class="chip">ROS</span><span class="chip">C++</span><span class="chip">motion planning</span><span class="chip">certification</span>
@@ -238,7 +236,7 @@
             <h3 class="entry-title">Airport guide robot + Android SDK</h3>
             <p class="entry-role">SDK architecture &amp; robot integration</p>
             <ul class="bullets">
-              <li>Designed a Kotlin Android SDK (rosbridge WebSocket, Coroutines/Flow, MVVM) that lets external apps command ROS robots — no CLI required.</li>
+              <li>Designed a Kotlin Android SDK (rosbridge WebSocket, Coroutines/Flow, MVVM) that lets external apps command ROS robots, no CLI required.</li>
               <li>Integrated with a third-party fleet system and shipped service modes (guidance, signage, docent, patrol) plus custom OS images and OTA updates.</li>
             </ul>
             <div class="card-chips chips">
@@ -261,7 +259,7 @@
             <h3 class="entry-title">3D vision sensor applications</h3>
             <p class="entry-role">Application engineer</p>
             <ul class="bullets">
-              <li>Built the control, logging, and licensing software for an in-house 3D vision sensor — C# WinForms application plus a C++ encryption/licensing library.</li>
+              <li>Built the control, logging, and licensing software for an in-house 3D vision sensor: a C# WinForms application plus a C++ encryption/licensing library.</li>
             </ul>
             <div class="card-chips chips">
               <span class="chip">C#</span><span class="chip">C++</span><span class="chip">.NET</span><span class="chip">licensing</span>
@@ -276,32 +274,27 @@
       <div class="container">
        <div class="how-layout">
         <div class="section-head reveal">
-          <p class="eyebrow"><span class="eyebrow-num">03</span>How I Work</p>
           <h2 class="section-title" id="how-title">The system around the model</h2>
-          <p class="section-intro">What sets my work apart is not that I use foundation models — it is the engineering system I build around them, proven on a safety-critical robot codebase.</p>
+          <p class="section-intro">What sets my work apart is not that I use foundation models. It is the engineering system I build around them, proven on a safety-critical robot codebase.</p>
         </div>
 
         <div class="grid grid-how">
-          <article class="card how-card reveal">
-            <p class="how-num">01</p>
+          <div class="how-item reveal">
             <h3 class="how-title">Pipelines, not prompts</h3>
-            <p class="how-body">An orchestrator coordinates specialized sub-agents with context isolation per task. The unit of work is a structured task with defined inputs, a verification step, and a record — not a chat.</p>
-          </article>
-          <article class="card how-card reveal">
-            <p class="how-num">02</p>
+            <p class="how-body">An orchestrator coordinates specialized sub-agents with context isolation per task. The unit of work is a structured task with defined inputs, a verification step, and a record, not a chat.</p>
+          </div>
+          <div class="how-item reveal">
             <h3 class="how-title">Gates that make AI safe to ship</h3>
-            <p class="how-body">Every commit is auto-reviewed; merges gate on AI review plus ASan/UBSan/TSan sanitizers in CI. The gates don't care who wrote the code — human or model.</p>
-          </article>
-          <article class="card how-card reveal">
-            <p class="how-num">03</p>
+            <p class="how-body">Every commit is auto-reviewed; merges gate on AI review plus ASan/UBSan/TSan sanitizers in CI. The gates don't care who wrote the code, human or model.</p>
+          </div>
+          <div class="how-item reveal">
             <h3 class="how-title">A platform, not a one-off</h3>
             <p class="how-body">Custom skills, event hooks, tool integrations, and cross-session memory: a small internal platform with its own standards, repeatable beyond any single project.</p>
-          </article>
-          <article class="card how-card reveal">
-            <p class="how-num">04</p>
+          </div>
+          <div class="how-item reveal">
             <h3 class="how-title">Judgment about model limits</h3>
             <p class="how-body">Model output is grounded against real-robot behavior before it is trusted; models are selected per task for reliability; my own FM usage is logged and self-audited.</p>
-          </article>
+          </div>
         </div>
        </div>
 
@@ -313,16 +306,15 @@
     <section class="section section--band section--tight" id="writing" aria-labelledby="writing-title">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow"><span class="eyebrow-num">04</span>Writing</p>
           <h2 class="section-title" id="writing-title">Writing &amp; case studies</h2>
-          <p class="section-intro">Long-form on how I engineer, and a deep dive on one flagship project — architecture, contracts, and the tradeoffs behind them.</p>
+          <p class="section-intro">Long-form on how I engineer, and a deep dive on one flagship project: architecture, contracts, and the tradeoffs behind them.</p>
         </div>
 
         <div class="writing-grid">
           <article class="featured reveal">
             <p class="featured-label">FEATURED WRITEUP</p>
             <h3 class="featured-title">How I Engineer with Foundation Models on a Safety-Critical Robot</h3>
-            <p class="featured-dek">Not the prompts — the pipeline, the gates, and the judgment. How a multi-year ROS 1 → ROS 2 migration ships fast without losing quality.</p>
+            <p class="featured-dek">Not the prompts: the pipeline, the gates, and the judgment. How a multi-year ROS 1 → ROS 2 migration ships fast without losing quality.</p>
             <a class="featured-cta" href="writing/fm-engineering.html">Read the article →</a>
           </article>
 
@@ -340,14 +332,13 @@
     <section class="section" id="about" aria-labelledby="about-title">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow"><span class="eyebrow-num">05</span>About</p>
           <h2 class="section-title" id="about-title">About</h2>
         </div>
 
         <div class="about-grid">
           <div class="about-bio reveal">
             <p>I'm a robotics software engineer with six years building and deploying autonomous mobile robots across smart-factory, logistics, mobility-assistance, airport, and food-service settings. I've shipped 30+ AMRs and 50+ serving robots into real-world operation.</p>
-            <p>I solve at the system level — onboard autonomy, fleet and control-system integration, GUIs, and communication protocols — not just at the code level. Right now I'm leading a multi-year migration of a legacy ROS 1 robot stack to a modular, middleware-agnostic ROS 2 platform in C++20, owning it from architecture through release. Before software, I trained in international trade — I bring that domain-first habit of thinking to engineering.</p>
+            <p>I solve at the system level: onboard autonomy, fleet and control-system integration, GUIs, and communication protocols, not just at the code level. Right now I'm leading a multi-year migration of a legacy ROS 1 robot stack to a modular, middleware-agnostic ROS 2 platform in C++20, owning it from architecture through release. Before software, I trained in international trade, and I bring that domain-first habit of thinking to engineering.</p>
             <p>What drives me is turning robots from research demos into products that actually work on the floor.</p>
           </div>
           <div class="about-side reveal">
@@ -419,8 +410,11 @@
 
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var els = document.querySelectorAll('.reveal');
-      if (reduce || !('IntersectionObserver' in window)) {
+      var revealAll = function () {
         els.forEach(function (el) { el.classList.add('is-visible'); });
+      };
+      if (reduce || !('IntersectionObserver' in window)) {
+        revealAll();
       } else {
         var io = new IntersectionObserver(function (entries) {
           entries.forEach(function (e) {
@@ -428,6 +422,10 @@
           });
         }, { rootMargin: '0px 0px -80px 0px', threshold: 0.1 });
         els.forEach(function (el) { io.observe(el); });
+        // Failsafe: content is never left gated behind a transition. If the
+        // observer never fires (headless capture, hidden tab, prerender),
+        // reveal everything once load settles.
+        window.addEventListener('load', function () { setTimeout(revealAll, 1000); });
       }
 
       var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-list a[href^="#"]'));

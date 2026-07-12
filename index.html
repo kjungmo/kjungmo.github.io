@@ -19,7 +19,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/style.css">
   <script>document.documentElement.classList.remove('no-js');</script>
@@ -30,7 +30,11 @@
   <header class="site-header">
     <div class="container">
       <a class="logo" href="#top" aria-label="Home">jk//</a>
-      <nav class="primary-nav" aria-label="Primary">
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
         <ul class="nav-list">
           <li><a href="#open-source">Open Source</a></li>
           <li><a href="#field-work">Field Work</a></li>
@@ -56,14 +60,24 @@
       <div class="container">
         <p class="hero-eyebrow reveal">ROS 2 · C++20 · SLAM &amp; NAVIGATION · AI-NATIVE DEV SYSTEMS</p>
         <h1 id="hero-h1" class="reveal">Jung Mo Kang</h1>
-        <p class="role reveal">Robotics Software Engineer</p>
-        <p class="lead reveal">I build autonomous mobile robots — and the engineering system around foundation models that lets them ship safely. Six years deploying robots into factories, restaurants, mobility-assistance settings, airports, and museums; currently leading a multi-year migration of a legacy ROS 1 stack to a modular, middleware-agnostic ROS 2 platform in C++20.</p>
+        <p class="role reveal">Robotics Software Engineer<span class="role-sep">·</span><span class="role-years">6 yrs</span></p>
+        <p class="hero-available reveal"><span class="dot" aria-hidden="true"></span><span>Open to conversations about robotics software, ROS 2 architecture, and AI-native engineering practice.</span></p>
+        <p class="lead reveal">I build autonomous mobile robots — and the engineering system around foundation models that lets them ship safely.</p>
         <div class="hero-ctas reveal">
           <a class="btn btn-primary" href="#open-source">
             View my open source
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
           <a class="btn btn-secondary" href="writing/fm-engineering.html">Read: how I engineer with FMs</a>
+        </div>
+        <div class="proof-strip reveal">
+          <span class="proof-label">Open source</span>
+          <a href="https://github.com/kjungmo/prism_loc">prism_loc</a><span class="proof-sep" aria-hidden="true">·</span>
+          <a href="https://github.com/kjungmo/strata">strata</a><span class="proof-sep" aria-hidden="true">·</span>
+          <a href="https://github.com/kjungmo/compass">compass</a><span class="proof-sep" aria-hidden="true">·</span>
+          <a href="https://github.com/kjungmo/se-mppi-nav2">se-mppi-nav2</a><span class="proof-sep" aria-hidden="true">·</span>
+          <a href="https://github.com/kjungmo/amr_stack">amr_stack</a><span class="proof-sep" aria-hidden="true">·</span>
+          <a href="https://github.com/kjungmo/robo-ops">robo-ops</a>
         </div>
         <div class="hero-links reveal">
           <a href="https://github.com/kjungmo">
@@ -74,7 +88,7 @@
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
             <span>LinkedIn</span>
           </a>
-          <a href="mailto:kangjmo91@gmail.com">
+          <a class="hero-email" href="mailto:kangjmo91@gmail.com">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
             <span>Email</span>
           </a>
@@ -85,21 +99,17 @@
     <!-- Stats -->
     <section class="stats" aria-label="At a glance">
       <div class="container">
-        <div class="stat reveal">
+        <div class="stat">
           <div class="num">6 yrs</div>
           <div class="label">building &amp; field-deploying robot software</div>
         </div>
-        <div class="stat reveal">
+        <div class="stat">
           <div class="num">30+</div>
           <div class="label">AMRs shipped into factory operation</div>
         </div>
-        <div class="stat reveal">
+        <div class="stat">
           <div class="num">50+</div>
           <div class="label">serving robots in real-world service</div>
-        </div>
-        <div class="stat reveal">
-          <div class="num">6</div>
-          <div class="label">open-source robotics projects</div>
         </div>
       </div>
     </section>
@@ -108,20 +118,23 @@
     <section class="section" id="open-source" aria-labelledby="os-title">
       <div class="container">
         <div class="section-head reveal">
-          <span class="tick" aria-hidden="true"></span>
-          <p class="eyebrow">Open Source</p>
+          <p class="eyebrow"><span class="eyebrow-num">01</span>Open Source</p>
           <h2 class="section-title" id="os-title">Robotics tools, built end-to-end</h2>
-          <p class="section-intro">Robotics tools I design and build end-to-end — estimator cores kept middleware-free, ROS 2 at the edges, every claim backed by tests and committed evaluation artifacts.</p>
+          <p class="section-intro">Estimator cores kept free of middleware, ROS 2 wired in only at the edges, and every performance claim backed by tests plus committed evaluation artifacts — not screenshots.</p>
         </div>
 
         <div class="grid grid-os">
-          <article class="card card-link reveal">
+          <article class="card card-study reveal">
+            <div class="card-badge">Case study</div>
             <h3 class="card-name">prism_loc</h3>
             <p class="card-desc">Pluggable LiDAR localization for ROS 2 — 2D MCL, 3D NDT-MCL, and LiDAR+IMU+RTK-GNSS ESKF fusion over middleware-free C++17 estimator cores, one map→odom contract.</p>
             <div class="card-chips chips">
               <span class="chip">ROS 2</span><span class="chip">C++17</span><span class="chip">MCL</span><span class="chip">ESKF</span>
             </div>
-            <a class="stretched" href="https://github.com/kjungmo/prism_loc" aria-label="prism_loc on GitHub"></a>
+            <div class="card-actions">
+              <a class="card-action-primary" href="writing/prism-loc-localization.html">Read the case study →</a>
+              <a class="card-action-secondary" href="https://github.com/kjungmo/prism_loc">GitHub</a>
+            </div>
           </article>
 
           <article class="card card-link reveal">
@@ -170,18 +183,17 @@
           </article>
         </div>
 
-        <p class="os-footer reveal">All public, all Apache-2.0 → <a href="https://github.com/kjungmo">github.com/kjungmo</a></p>
+        <p class="os-footer">All public, all Apache-2.0 → <a href="https://github.com/kjungmo">github.com/kjungmo</a></p>
       </div>
     </section>
 
     <!-- Field Work -->
-    <section class="section" id="field-work" aria-labelledby="fw-title">
+    <section class="section section--band" id="field-work" aria-labelledby="fw-title">
       <div class="container">
         <div class="section-head reveal">
-          <span class="tick" aria-hidden="true"></span>
-          <p class="eyebrow">Field Work</p>
+          <p class="eyebrow"><span class="eyebrow-num">02</span>Field Work</p>
           <h2 class="section-title" id="fw-title">Production robotics, delivered on-site</h2>
-          <p class="section-intro">Production robotics, delivered on-site. Client and employer names withheld; the work speaks for itself.</p>
+          <p class="section-intro">Client and employer names withheld. What “on-site” meant here: months of bring-up on the factory floor, crash triage against real hardware, and pilots carried into commercial rollout.</p>
         </div>
 
         <div class="grid grid-field">
@@ -262,9 +274,9 @@
     <!-- How I Work -->
     <section class="section" id="how-i-work" aria-labelledby="how-title">
       <div class="container">
+       <div class="how-layout">
         <div class="section-head reveal">
-          <span class="tick" aria-hidden="true"></span>
-          <p class="eyebrow">How I Work</p>
+          <p class="eyebrow"><span class="eyebrow-num">03</span>How I Work</p>
           <h2 class="section-title" id="how-title">The system around the model</h2>
           <p class="section-intro">What sets my work apart is not that I use foundation models — it is the engineering system I build around them, proven on a safety-critical robot codebase.</p>
         </div>
@@ -291,26 +303,36 @@
             <p class="how-body">Model output is grounded against real-robot behavior before it is trusted; models are selected per task for reliability; my own FM usage is logged and self-audited.</p>
           </article>
         </div>
+       </div>
 
-        <p class="how-footer reveal"><a href="writing/fm-engineering.html">Read the full writeup →</a></p>
+        <p class="how-footer"><a href="writing/fm-engineering.html">Read the full writeup →</a></p>
       </div>
     </section>
 
     <!-- Writing -->
-    <section class="section" id="writing" aria-labelledby="writing-title">
+    <section class="section section--band section--tight" id="writing" aria-labelledby="writing-title">
       <div class="container">
         <div class="section-head reveal">
-          <span class="tick" aria-hidden="true"></span>
-          <p class="eyebrow">Writing</p>
-          <h2 class="section-title" id="writing-title">Featured writeup</h2>
+          <p class="eyebrow"><span class="eyebrow-num">04</span>Writing</p>
+          <h2 class="section-title" id="writing-title">Writing &amp; case studies</h2>
+          <p class="section-intro">Long-form on how I engineer, and a deep dive on one flagship project — architecture, contracts, and the tradeoffs behind them.</p>
         </div>
 
-        <article class="featured reveal">
-          <p class="featured-label">FEATURED WRITEUP</p>
-          <h3 class="featured-title">How I Engineer with Foundation Models on a Safety-Critical Robot</h3>
-          <p class="featured-dek">Not the prompts — the pipeline, the gates, and the judgment. How a multi-year ROS 1 → ROS 2 migration ships fast without losing quality.</p>
-          <a class="featured-cta" href="writing/fm-engineering.html">Read the article →</a>
-        </article>
+        <div class="writing-grid">
+          <article class="featured reveal">
+            <p class="featured-label">FEATURED WRITEUP</p>
+            <h3 class="featured-title">How I Engineer with Foundation Models on a Safety-Critical Robot</h3>
+            <p class="featured-dek">Not the prompts — the pipeline, the gates, and the judgment. How a multi-year ROS 1 → ROS 2 migration ships fast without losing quality.</p>
+            <a class="featured-cta" href="writing/fm-engineering.html">Read the article →</a>
+          </article>
+
+          <article class="featured reveal">
+            <p class="featured-label">CASE STUDY</p>
+            <h3 class="featured-title">Inside prism_loc: one map→odom contract for three localizers</h3>
+            <p class="featured-dek">Why the estimator cores stay middleware-free, how a single map→odom contract lets 2D MCL, 3D NDT-MCL, and ESKF fusion swap in place, and what that costs.</p>
+            <a class="featured-cta" href="writing/prism-loc-localization.html">Read the case study →</a>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -318,8 +340,7 @@
     <section class="section" id="about" aria-labelledby="about-title">
       <div class="container">
         <div class="section-head reveal">
-          <span class="tick" aria-hidden="true"></span>
-          <p class="eyebrow">About</p>
+          <p class="eyebrow"><span class="eyebrow-num">05</span>About</p>
           <h2 class="section-title" id="about-title">About</h2>
         </div>
 
@@ -373,6 +394,29 @@
 
   <script>
     (function () {
+      // Mobile nav disclosure
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.getElementById('primary-nav');
+      if (toggle && nav) {
+        var closeNav = function () {
+          nav.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        };
+        toggle.addEventListener('click', function () {
+          var open = nav.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        nav.addEventListener('click', function (e) {
+          if (e.target.closest('a')) { closeNav(); }
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') { closeNav(); }
+        });
+        document.addEventListener('click', function (e) {
+          if (!nav.contains(e.target) && !toggle.contains(e.target)) { closeNav(); }
+        });
+      }
+
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var els = document.querySelectorAll('.reveal');
       if (reduce || !('IntersectionObserver' in window)) {

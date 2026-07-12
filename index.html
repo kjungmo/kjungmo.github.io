@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jung Mo Kang — Robotics Software Engineer</title>
+  <meta name="description" content="Robotics software engineer building autonomous mobile robots and the AI-native engineering systems that ship them safely. ROS 2, C++20, SLAM and navigation, open-source robotics.">
+  <link rel="canonical" href="https://kjungmo.github.io/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kjungmo.github.io/">
+  <meta property="og:title" content="Jung Mo Kang — Robotics Software Engineer">
+  <meta property="og:description" content="Robotics software engineer building autonomous mobile robots and the AI-native engineering systems that ship them safely. ROS 2, C++20, SLAM and navigation, open-source robotics.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Jung Mo Kang — Robotics Software Engineer">
+  <meta name="twitter:description" content="Robotics software engineer building autonomous mobile robots and the AI-native engineering systems that ship them safely. ROS 2, C++20, SLAM and navigation, open-source robotics.">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/style.css">
+  <script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="#top" aria-label="Home">jk//</a>
+      <nav class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#open-source">Open Source</a></li>
+          <li><a href="#field-work">Field Work</a></li>
+          <li><a href="#how-i-work">How I Work</a></li>
+          <li><a href="#writing">Writing</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a class="nav-icon" href="https://github.com/kjungmo" aria-label="GitHub profile">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-h1">
+      <div class="container">
+        <p class="hero-eyebrow reveal">ROS 2 · C++20 · SLAM &amp; NAVIGATION · AI-NATIVE DEV SYSTEMS</p>
+        <h1 id="hero-h1" class="reveal">Jung Mo Kang</h1>
+        <p class="role reveal">Robotics Software Engineer</p>
+        <p class="lead reveal">I build autonomous mobile robots — and the engineering system around foundation models that lets them ship safely. Six years deploying robots into factories, restaurants, mobility-assistance settings, airports, and museums; currently leading a multi-year migration of a legacy ROS 1 stack to a modular, middleware-agnostic ROS 2 platform in C++20.</p>
+        <div class="hero-ctas reveal">
+          <a class="btn btn-primary" href="#open-source">
+            View my open source
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a class="btn btn-secondary" href="writing/fm-engineering.html">Read: how I engineer with FMs</a>
+        </div>
+        <div class="hero-links reveal">
+          <a href="https://github.com/kjungmo">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/mrkangjmo/">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="mailto:kangjmo91@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <span>Email</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats" aria-label="At a glance">
+      <div class="container">
+        <div class="stat reveal">
+          <div class="num">6 yrs</div>
+          <div class="label">building &amp; field-deploying robot software</div>
+        </div>
+        <div class="stat reveal">
+          <div class="num">30+</div>
+          <div class="label">AMRs shipped into factory operation</div>
+        </div>
+        <div class="stat reveal">
+          <div class="num">50+</div>
+          <div class="label">serving robots in real-world service</div>
+        </div>
+        <div class="stat reveal">
+          <div class="num">6</div>
+          <div class="label">open-source robotics projects</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Open Source -->
+    <section class="section" id="open-source" aria-labelledby="os-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="tick" aria-hidden="true"></span>
+          <p class="eyebrow">Open Source</p>
+          <h2 class="section-title" id="os-title">Robotics tools, built end-to-end</h2>
+          <p class="section-intro">Robotics tools I design and build end-to-end — estimator cores kept middleware-free, ROS 2 at the edges, every claim backed by tests and committed evaluation artifacts.</p>
+        </div>
+
+        <div class="grid grid-os">
+          <article class="card card-link reveal">
+            <h3 class="card-name">prism_loc</h3>
+            <p class="card-desc">Pluggable LiDAR localization for ROS 2 — 2D MCL, 3D NDT-MCL, and LiDAR+IMU+RTK-GNSS ESKF fusion over middleware-free C++17 estimator cores, one map→odom contract.</p>
+            <div class="card-chips chips">
+              <span class="chip">ROS 2</span><span class="chip">C++17</span><span class="chip">MCL</span><span class="chip">ESKF</span>
+            </div>
+            <a class="stretched" href="https://github.com/kjungmo/prism_loc" aria-label="prism_loc on GitHub"></a>
+          </article>
+
+          <article class="card card-link reveal">
+            <h3 class="card-name">strata</h3>
+            <p class="card-desc">Pluggable lifelong LiDAR mapping for ROS 2 — selectable 2D occupancy / 3D voxel backends, Bayesian persistence with FreMEn periodicity, 6-DoF. Sibling of prism_loc.</p>
+            <div class="card-chips chips">
+              <span class="chip">ROS 2</span><span class="chip">mapping</span><span class="chip">lifelong</span>
+            </div>
+            <a class="stretched" href="https://github.com/kjungmo/strata" aria-label="strata on GitHub"></a>
+          </article>
+
+          <article class="card card-link reveal">
+            <h3 class="card-name">compass</h3>
+            <p class="card-desc">Commitment-based passing for social robot navigation: temporally consistent left/right passing decisions with lexicographic safety. Nav2 controller plugin, Gazebo testbed, and paper (arXiv-ready).</p>
+            <div class="card-chips chips">
+              <span class="chip">Nav2 plugin</span><span class="chip">social navigation</span><span class="chip">paper</span>
+            </div>
+            <a class="stretched" href="https://github.com/kjungmo/compass" aria-label="compass on GitHub"></a>
+          </article>
+
+          <article class="card card-link reveal">
+            <h3 class="card-name">se-mppi-nav2</h3>
+            <p class="card-desc">Nav2-native MPPI local controller: online local-minima detection-and-escape plus a dynamic-obstacle CBF safety filter, validated on a 1,200-trial randomized benchmark.</p>
+            <div class="card-chips chips">
+              <span class="chip">MPPI</span><span class="chip">CBF</span><span class="chip">benchmark</span>
+            </div>
+            <a class="stretched" href="https://github.com/kjungmo/se-mppi-nav2" aria-label="se-mppi-nav2 on GitHub"></a>
+          </article>
+
+          <article class="card card-link reveal">
+            <h3 class="card-name">amr_stack</h3>
+            <p class="card-desc">A complete AMR software stack written from scratch: 2D sim, log-odds mapping, scan-matching SLAM, MCL, A*+DWA planning, nav FSM, HRI GUI — pure Python plus C++ ROS 2 ports.</p>
+            <div class="card-chips chips">
+              <span class="chip">from scratch</span><span class="chip">SLAM</span><span class="chip">planning</span>
+            </div>
+            <a class="stretched" href="https://github.com/kjungmo/amr_stack" aria-label="amr_stack on GitHub"></a>
+          </article>
+
+          <article class="card card-link reveal">
+            <h3 class="card-name">robo-ops</h3>
+            <p class="card-desc">Operator console for AMR/AGV fleet control — 30 interactive screens (dashboard, live map, remote control, KPI analytics) as a fully client-side React 19 + TypeScript app.</p>
+            <div class="card-chips chips">
+              <span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">fleet ops</span>
+            </div>
+            <a class="stretched" href="https://github.com/kjungmo/robo-ops" aria-label="robo-ops on GitHub"></a>
+          </article>
+        </div>
+
+        <p class="os-footer reveal">All public, all Apache-2.0 → <a href="https://github.com/kjungmo">github.com/kjungmo</a></p>
+      </div>
+    </section>
+
+    <!-- Field Work -->
+    <section class="section" id="field-work" aria-labelledby="fw-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="tick" aria-hidden="true"></span>
+          <p class="eyebrow">Field Work</p>
+          <h2 class="section-title" id="fw-title">Production robotics, delivered on-site</h2>
+          <p class="section-intro">Production robotics, delivered on-site. Client and employer names withheld; the work speaks for itself.</p>
+        </div>
+
+        <div class="grid grid-field">
+          <article class="card entry reveal">
+            <h3 class="entry-title">Factory logistics automation — AMR fleet</h3>
+            <p class="entry-role">AMR software engineer, on-site deployment</p>
+            <ul class="bullets">
+              <li>Built ROS-based AMR autonomy and the fleet-side ACS bridge protocol (WebSocket) connecting robots to the plant control system.</li>
+              <li>Automated mass installation and mapping/logging workflows, making a 30+ robot rollout at an overseas factory repeatable — the protocol carried the project into commercial rollout.</li>
+              <li>Lived on-site for months of bring-up: crash triage with gdb, alarm-code and charging-sequence fixes on real hardware.</li>
+            </ul>
+            <div class="card-chips chips">
+              <span class="chip">ROS</span><span class="chip">C++</span><span class="chip">Python</span><span class="chip">WebSocket</span><span class="chip">on-site</span>
+            </div>
+          </article>
+
+          <article class="card entry reveal">
+            <h3 class="entry-title">Serving robots at scale</h3>
+            <p class="entry-role">Feature development, maintenance, field debugging</p>
+            <ul class="bullets">
+              <li>Maintained and extended C++ autonomy features across 50+ robots serving in restaurants and cafés; multi-robot showcases at industry exhibitions.</li>
+              <li>Built a web app for assembly-conformance QA (Node.js/Express + ROS bridge) that sharply cut manual inspection time, and mass-production Ubuntu images for repeatable manufacturing.</li>
+            </ul>
+            <div class="card-chips chips">
+              <span class="chip">ROS</span><span class="chip">C++</span><span class="chip">Node.js</span><span class="chip">manufacturing</span>
+            </div>
+          </article>
+
+          <article class="card entry reveal">
+            <h3 class="entry-title">Autonomous mobility-assistance chair</h3>
+            <p class="entry-role">Bring-up → autonomy → certification</p>
+            <ul class="bullets">
+              <li>Brought a rider-carrying autonomous chair from bare hardware to a drivable, obstacle-avoiding system; tuned avoidance path planning for safety around people.</li>
+              <li>Passed public-institution certification testing — cleared for real-site service in a public museum setting.</li>
+            </ul>
+            <div class="card-chips chips">
+              <span class="chip">ROS</span><span class="chip">C++</span><span class="chip">motion planning</span><span class="chip">certification</span>
+            </div>
+          </article>
+
+          <article class="card entry reveal">
+            <h3 class="entry-title">Airport guide robot + Android SDK</h3>
+            <p class="entry-role">SDK architecture &amp; robot integration</p>
+            <ul class="bullets">
+              <li>Designed a Kotlin Android SDK (rosbridge WebSocket, Coroutines/Flow, MVVM) that lets external apps command ROS robots — no CLI required.</li>
+              <li>Integrated with a third-party fleet system and shipped service modes (guidance, signage, docent, patrol) plus custom OS images and OTA updates.</li>
+            </ul>
+            <div class="card-chips chips">
+              <span class="chip">Kotlin</span><span class="chip">Android</span><span class="chip">SDK</span><span class="chip">fleet integration</span>
+            </div>
+          </article>
+
+          <article class="card entry reveal">
+            <h3 class="entry-title">Autonomous cart PoC</h3>
+            <p class="entry-role">Full robot software, algorithm tuning</p>
+            <ul class="bullets">
+              <li>Delivered an indoor autonomous logistics cart pilot in two months on an existing platform: new sensor integration, side-sensing deceleration on turns, site mapping, operator handover.</li>
+            </ul>
+            <div class="card-chips chips">
+              <span class="chip">ROS</span><span class="chip">C++</span><span class="chip">PoC</span><span class="chip">sensors</span>
+            </div>
+          </article>
+
+          <article class="card entry reveal">
+            <h3 class="entry-title">3D vision sensor applications</h3>
+            <p class="entry-role">Application engineer</p>
+            <ul class="bullets">
+              <li>Built the control, logging, and licensing software for an in-house 3D vision sensor — C# WinForms application plus a C++ encryption/licensing library.</li>
+            </ul>
+            <div class="card-chips chips">
+              <span class="chip">C#</span><span class="chip">C++</span><span class="chip">.NET</span><span class="chip">licensing</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How I Work -->
+    <section class="section" id="how-i-work" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="tick" aria-hidden="true"></span>
+          <p class="eyebrow">How I Work</p>
+          <h2 class="section-title" id="how-title">The system around the model</h2>
+          <p class="section-intro">What sets my work apart is not that I use foundation models — it is the engineering system I build around them, proven on a safety-critical robot codebase.</p>
+        </div>
+
+        <div class="grid grid-how">
+          <article class="card how-card reveal">
+            <p class="how-num">01</p>
+            <h3 class="how-title">Pipelines, not prompts</h3>
+            <p class="how-body">An orchestrator coordinates specialized sub-agents with context isolation per task. The unit of work is a structured task with defined inputs, a verification step, and a record — not a chat.</p>
+          </article>
+          <article class="card how-card reveal">
+            <p class="how-num">02</p>
+            <h3 class="how-title">Gates that make AI safe to ship</h3>
+            <p class="how-body">Every commit is auto-reviewed; merges gate on AI review plus ASan/UBSan/TSan sanitizers in CI. The gates don't care who wrote the code — human or model.</p>
+          </article>
+          <article class="card how-card reveal">
+            <p class="how-num">03</p>
+            <h3 class="how-title">A platform, not a one-off</h3>
+            <p class="how-body">Custom skills, event hooks, tool integrations, and cross-session memory: a small internal platform with its own standards, repeatable beyond any single project.</p>
+          </article>
+          <article class="card how-card reveal">
+            <p class="how-num">04</p>
+            <h3 class="how-title">Judgment about model limits</h3>
+            <p class="how-body">Model output is grounded against real-robot behavior before it is trusted; models are selected per task for reliability; my own FM usage is logged and self-audited.</p>
+          </article>
+        </div>
+
+        <p class="how-footer reveal"><a href="writing/fm-engineering.html">Read the full writeup →</a></p>
+      </div>
+    </section>
+
+    <!-- Writing -->
+    <section class="section" id="writing" aria-labelledby="writing-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="tick" aria-hidden="true"></span>
+          <p class="eyebrow">Writing</p>
+          <h2 class="section-title" id="writing-title">Featured writeup</h2>
+        </div>
+
+        <article class="featured reveal">
+          <p class="featured-label">FEATURED WRITEUP</p>
+          <h3 class="featured-title">How I Engineer with Foundation Models on a Safety-Critical Robot</h3>
+          <p class="featured-dek">Not the prompts — the pipeline, the gates, and the judgment. How a multi-year ROS 1 → ROS 2 migration ships fast without losing quality.</p>
+          <a class="featured-cta" href="writing/fm-engineering.html">Read the article →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="tick" aria-hidden="true"></span>
+          <p class="eyebrow">About</p>
+          <h2 class="section-title" id="about-title">About</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-bio reveal">
+            <p>I'm a robotics software engineer with six years building and deploying autonomous mobile robots across smart-factory, logistics, mobility-assistance, airport, and food-service settings. I've shipped 30+ AMRs and 50+ serving robots into real-world operation.</p>
+            <p>I solve at the system level — onboard autonomy, fleet and control-system integration, GUIs, and communication protocols — not just at the code level. Right now I'm leading a multi-year migration of a legacy ROS 1 robot stack to a modular, middleware-agnostic ROS 2 platform in C++20, owning it from architecture through release. Before software, I trained in international trade — I bring that domain-first habit of thinking to engineering.</p>
+            <p>What drives me is turning robots from research demos into products that actually work on the floor.</p>
+          </div>
+          <div class="about-side reveal">
+            <div class="about-block">
+              <h3>Core stack</h3>
+              <div class="chips">
+                <span class="chip">C++20</span><span class="chip">ROS 2</span><span class="chip">Python</span><span class="chip">Kotlin</span><span class="chip">SLAM &amp; navigation</span><span class="chip">Nav2</span><span class="chip">DDS</span><span class="chip">Linux</span><span class="chip">Docker</span><span class="chip">CI/CD</span><span class="chip">multi-agent AI tooling</span>
+              </div>
+            </div>
+            <div class="about-block">
+              <h3>Languages</h3>
+              <p class="about-langs">Korean (native) · English (professional) · German (B1)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contact / Footer -->
+  <footer class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="reveal">
+        <h2 id="contact-title">Let's talk robots.</h2>
+        <p class="contact-line">Open to conversations about robotics software, ROS 2 architecture, and AI-native engineering practice.</p>
+        <div class="contact-buttons">
+          <a class="btn btn-primary" href="mailto:kangjmo91@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            Email
+          </a>
+          <a class="btn btn-secondary" href="https://github.com/kjungmo">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+            GitHub
+          </a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/mrkangjmo/">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+        <p class="smallprint">© 2026 Jung Mo Kang · Built by hand, no framework · <a href="https://github.com/kjungmo/kjungmo.github.io">Source on GitHub</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = document.querySelectorAll('.reveal');
+      if (reduce || !('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('is-visible'); });
+      } else {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+          });
+        }, { rootMargin: '0px 0px -80px 0px', threshold: 0.1 });
+        els.forEach(function (el) { io.observe(el); });
+      }
+
+      var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-list a[href^="#"]'));
+      var sections = navLinks.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+      if ('IntersectionObserver' in window) {
+        var spy = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              navLinks.forEach(function (a) { a.removeAttribute('aria-current'); });
+              var id = e.target.getAttribute('id');
+              var active = navLinks.filter(function (a) { return a.getAttribute('href') === '#' + id; })[0];
+              if (active) { active.setAttribute('aria-current', 'true'); }
+            }
+          });
+        }, { rootMargin: '-' + (window.innerHeight >> 1) + 'px 0px -' + (window.innerHeight >> 1) + 'px 0px' });
+        sections.forEach(function (s) { if (s) spy.observe(s); });
+      }
+    })();
+  </script>
+</body>
+</html>

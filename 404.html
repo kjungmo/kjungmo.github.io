@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found — Jung Mo Kang</title>
+  <meta name="robots" content="noindex">
+
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/style.css">
+  <script>document.documentElement.classList.remove('no-js');</script>
+  <style>
+    .notfound {
+      min-height: 72vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-block: 96px;
+    }
+    .notfound .code {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .notfound h1 { font-size: clamp(32px, 6vw, 48px); margin-bottom: 16px; }
+    .notfound p {
+      font-size: 18px;
+      color: var(--text-2);
+      max-width: 52ch;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    .notfound .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+      font-family: var(--mono);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/" aria-label="Home">jk//</a>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="/#open-source">Open Source</a></li>
+          <li><a href="/#field-work">Field Work</a></li>
+          <li><a href="/#writing">Writing</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container notfound">
+        <p class="code">Error 404 · off the map</p>
+        <h1>This path has no localization.</h1>
+        <p>The page you were after has drifted out of frame. Let's re-home you — the work is all one click away.</p>
+        <div class="links">
+          <a href="/">← Back to home</a>
+          <a href="/#open-source">Open source projects</a>
+          <a href="/#writing">Writing &amp; case studies</a>
+          <a href="https://github.com/kjungmo">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section contact article-footer" aria-labelledby="contact-title">
+    <div class="container">
+      <div>
+        <h2 id="contact-title">Let's talk robots.</h2>
+        <p class="contact-line">Open to conversations about robotics software, ROS 2 architecture, and AI-native engineering practice.</p>
+        <p class="smallprint">© 2026 Jung Mo Kang · Built by hand, no framework · <a href="https://github.com/kjungmo/kjungmo.github.io">Source on GitHub</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

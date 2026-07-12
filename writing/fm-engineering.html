@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How I Engineer with Foundation Models on a Safety-Critical Robot — Jung Mo Kang</title>
+  <meta name="description" content="A look at the development system I built around an AI coding workflow — not the prompts, but the pipeline, the gates, and the judgment.">
+  <link rel="canonical" href="https://kjungmo.github.io/writing/fm-engineering.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://kjungmo.github.io/writing/fm-engineering.html">
+  <meta property="og:title" content="How I Engineer with Foundation Models on a Safety-Critical Robot — Jung Mo Kang">
+  <meta property="og:description" content="A look at the development system I built around an AI coding workflow — not the prompts, but the pipeline, the gates, and the judgment.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How I Engineer with Foundation Models on a Safety-Critical Robot — Jung Mo Kang">
+  <meta name="twitter:description" content="A look at the development system I built around an AI coding workflow — not the prompts, but the pipeline, the gates, and the judgment.">
+
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/style.css">
+  <script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <main id="main" class="article-wrap">
+    <div class="container">
+      <a class="backlink" href="../index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        jungmo.kang
+      </a>
+
+      <article class="article">
+        <h1>How I Engineer with Foundation Models on a Safety-Critical Robot</h1>
+        <p class="dek">A look at the development system I built around an AI coding workflow — not the prompts, but the pipeline, the gates, and the judgment.</p>
+        <p class="byline">Jung Mo Kang · 2026</p>
+
+        <p>There are two crowds in software right now: people who use foundation models (FMs) as autocomplete, and people who do hard systems work. The interesting place is the intersection — engineers who <em>orchestrate</em> models <strong>and</strong> ship real-time code that runs on a real machine. That intersection is where I work.</p>
+
+        <p>For the past several months I've been leading a multi-year migration of a legacy ROS 1 robot stack to a modular, middleware-agnostic ROS 2 (Jazzy) platform in C++20 — safety-critical software with real motion authority. I used foundation models to move fast on it. But "used AI" undersells what actually made it work. What made it work was the <strong>engineering system I built around the models</strong>. Here's how it fits together.</p>
+
+        <h2><span class="h2-num">1.</span> The problem: speed without losing quality</h2>
+        <p>A safety-critical rewrite is exactly where naive AI use is dangerous. A model that confidently produces plausible-but-wrong motion code is worse than no model at all. So the goal wasn't "write code faster" — it was <em>ship a multi-year migration at a high cadence with no quality regressions</em>. That reframing drove every decision below.</p>
+
+        <h2><span class="h2-num">2.</span> The pipeline, not the prompt</h2>
+        <p>Instead of prompting ad hoc, I run a multi-agent development pipeline: an orchestrator coordinates specialized sub-agents (one for review, one for auditing, others for focused tasks), with workflow loops and context isolation per task. The unit of work isn't "a chat" — it's a structured task with defined inputs, a verification step, and a record of what happened.</p>
+
+        <p class="lesson">The lesson I'd share: <strong>architect AI pipelines, not prompts.</strong> A repeatable pipeline is what turns a clever one-off into something a whole team could rely on.</p>
+
+        <h2><span class="h2-num">3.</span> Automated gates that make AI safe to ship</h2>
+        <p>Every commit is auto-reviewed before it can merge. Merges are gated on two independent checks: an AI code review pass <strong>and</strong> runtime sanitizers (ASan/UBSan/TSan) in CI. Neither alone is enough; together they catch a large share of the memory, concurrency, and undefined-behavior bugs that a fast pace would otherwise let through.</p>
+
+        <p>This is the part that lets me actually trust the velocity. The gates don't care how the code was written — human or model — they only let through code that passes.</p>
+
+        <h2><span class="h2-num">4.</span> A platform, not a one-off workflow</h2>
+        <p>The pieces above are reusable: custom skills, event hooks, command overrides, tool integrations, and cross-session memory. I treat my AI development setup as a small internal platform with its own standards, not a pile of personal shortcuts. That's the difference between "I'm good with AI" and "I built something repeatable that survives me."</p>
+
+        <h2><span class="h2-num">5.</span> The judgment: knowing when <em>not</em> to trust the model</h2>
+        <p>This is the senior signal, and it's the hardest to fake. Three habits:</p>
+        <ul class="article-list">
+          <li><strong>Verify before claiming.</strong> Model output gets grounded against real-robot behavior before I accept a fix. On-robot localization failures, for example, are debugged against the actual machine — not against the model's confident story about them.</li>
+          <li><strong>Deliberate model selection by task.</strong> Reasoning-heavy architecture work and high-fan-out mechanical tasks call for different models, chosen for reliability, not just cost.</li>
+          <li><strong>Govern my own usage.</strong> I ran a logged self-audit of my FM usage across multiple tools — model/cost tiering, and closing security-hygiene gaps. FMOps applied to my own stack, with receipts.</li>
+        </ul>
+
+        <p class="lesson">Anyone can prompt. Judgment about where models fail is what separates a senior FM engineer from a power user.</p>
+
+        <h2>What I'd tell another engineer</h2>
+        <p>You don't differentiate on "I use AI." Everyone does now. You differentiate on the <em>system</em> you build around it: the pipeline, the gates, the platform, and the judgment to know its limits. Build those, measure them honestly — including the rough edges — and you'll have something far more credible than "great with AI."</p>
+
+        <hr>
+
+        <p class="article-footnote">I'm a robotics software engineer working at the intersection of ROS 2 / C++20 systems and AI-native development. More of my open-source robotics work: github.com/kjungmo</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="section contact article-footer" aria-labelledby="contact-title">
+    <div class="container">
+      <div>
+        <h2 id="contact-title">Let's talk robots.</h2>
+        <p class="contact-line">Open to conversations about robotics software, ROS 2 architecture, and AI-native engineering practice.</p>
+        <div class="contact-buttons">
+          <a class="btn btn-primary" href="mailto:kangjmo91@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            Email
+          </a>
+          <a class="btn btn-secondary" href="https://github.com/kjungmo">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+            GitHub
+          </a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/mrkangjmo/">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+        <p class="smallprint">© 2026 Jung Mo Kang · Built by hand, no framework · <a href="https://github.com/kjungmo/kjungmo.github.io">Source on GitHub</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

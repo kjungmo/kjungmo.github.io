@@ -9,7 +9,7 @@
   --surface-2: #1F232C;   /* hover / muted surface */
   --border: #2B303B;      /* card & divider borders */
   --text: #F2F1ED;        /* primary text (warm near-white) */
-  --text-2: #A6A7AE;      /* secondary text */
+  --text-2: #B4A695;      /* secondary text (warm desaturated sand, same temp axis as accent) */
   --accent: #E8A33D;      /* signal amber accent */
   --accent-hover: #F2B75C;   /* brighter accent for button hover */
   --accent-dim: rgba(232, 163, 61, 0.12);  /* chip/badge fills */
@@ -351,8 +351,12 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 .hero h1 {
-  font-size: clamp(34px, 8vw, 56px);
-  margin-bottom: 8px;
+  /* Oversized editorial display — caps at 5.5rem on desktop (below the 6rem
+     ceiling); letter-spacing held at -0.03em (looser than the -0.04em floor). */
+  font-size: clamp(38px, 9vw, 5.5rem);
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
 }
 
 .hero .role {
@@ -738,7 +742,28 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 /* ----- Contact / footer ----------------------------------------------------*/
-.contact { border-top: 1px solid var(--border); }
+.contact {
+  border-top: 1px solid var(--border);
+  position: relative;   /* anchor for the decorative wave layer */
+  overflow: hidden;     /* the wave layer never adds scroll or shifts layout */
+}
+/* Topographic wave band at the very bottom of the footer. Decorative only:
+   a CSS background so a failed load degrades to nothing (no broken-image),
+   aria-hidden + pointer-events:none in markup, painted behind content. The
+   asset's own #0F1116 fill matches --bg, so the crest reads as depth with no
+   seam above it. */
+.contact-waves {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 360px;
+  max-height: 66%;
+  z-index: 0;
+  pointer-events: none;
+  background: url("waves.svg") no-repeat center bottom;
+  background-size: cover;
+  opacity: 0.6;
+}
+.contact .container { position: relative; z-index: 1; }
 .contact h2 {
   font-size: 44px;
   line-height: 1.1;

@@ -78,9 +78,19 @@
         </ul>
         <p>These are genuinely different estimators: different state, different sensors, different failure modes. What lets them coexist is that none of them owns the interface; they all just emit map→odom.</p>
 
+        <figure class="figure--tile">
+          <img src="../assets/img/prism-arch.png" width="760" height="851" loading="lazy" decoding="async" alt="Architecture diagram of prism_loc: middleware-free C++17 estimator cores for MCL and ESKF fusion at the base, the ROS 2 nodes and adapters wrapping them in the middle, and the single map→odom output contract at the top.">
+          <figcaption>The shape in one picture: the middleware-free C++17 cores (2D/3D MCL and the ESKF fusion) sit at the base, the ROS 2 nodes and adapters wrap them in the middle, and every backend converges on the same map→odom output contract at the top.</figcaption>
+        </figure>
+
         <h2><span class="h2-num">4.</span> Middleware-free cores, ROS 2 at the edges</h2>
         <p>Each estimator core is plain C++17 with no dependency on the middleware. ROS 2 lives at the edges (subscriptions in, the transform out) as a thin adapter wrapped around a core that never imports it. That boundary is a deliberate choice, and it pays for itself twice.</p>
         <p>First, testability. A core that takes scans and poses and returns a correction can be exercised directly, deterministically, without spinning up a graph of nodes. That is what makes it honest to say every claim is backed by tests and committed evaluation artifacts rather than a one-off demo: the thing being evaluated is a pure function of its inputs.</p>
+
+        <figure class="figure--tile">
+          <img src="../assets/img/prism-eval.png" width="880" height="656" loading="lazy" decoding="async" alt="Evaluation plot for prism_loc: position error over time on top and yaw error over time on the bottom, each traced for three random seeds.">
+          <figcaption>One of the committed evaluation artifacts: position error (top) and yaw error (bottom) over time for a run, repeated across three random seeds.</figcaption>
+        </figure>
         <p>Second, portability. The estimator is not hostage to one distro's message types or transport. The middleware can move underneath it and the math does not care.</p>
 
         <h2><span class="h2-num">5.</span> What it costs</h2>

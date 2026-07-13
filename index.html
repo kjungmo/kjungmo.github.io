@@ -124,6 +124,9 @@
 
         <div class="grid grid-os">
           <article class="card card-study reveal">
+            <div class="card-figure card-figure--tile">
+              <img src="assets/img/prism-eval.png" width="880" height="656" loading="lazy" decoding="async" alt="Evaluation plot from prism_loc: localization position error and yaw error over time across three random seeds.">
+            </div>
             <div class="card-badge">Case study</div>
             <h3 class="card-name">prism_loc</h3>
             <p class="card-desc">Pluggable LiDAR localization for ROS 2: 2D MCL, 3D NDT-MCL, and LiDAR+IMU+RTK-GNSS ESKF fusion over middleware-free C++17 estimator cores, one map→odom contract.</p>
@@ -137,6 +140,9 @@
           </article>
 
           <article class="card card-link reveal">
+            <div class="card-figure card-figure--tile">
+              <img src="assets/img/strata-e1.png" width="880" height="353" loading="lazy" decoding="async" alt="Evaluation plot from strata: static-map F1 accuracy over time for the 2D grid and 3D voxel backends across low, medium, and high transient-mover densities.">
+            </div>
             <h3 class="card-name">strata</h3>
             <p class="card-desc">Pluggable lifelong LiDAR mapping for ROS 2: selectable 2D occupancy / 3D voxel backends, Bayesian persistence with FreMEn periodicity, 6-DoF. Sibling of prism_loc.</p>
             <div class="card-chips chips">
@@ -146,6 +152,9 @@
           </article>
 
           <article class="card card-link reveal">
+            <div class="card-figure card-figure--tile">
+              <img src="assets/img/compass-costfield.png" width="880" height="377" loading="lazy" decoding="async" alt="Figure from compass: the asymmetric social cost field around a moving person, wider in front than behind, shown at a near and a far prediction horizon.">
+            </div>
             <h3 class="card-name">compass</h3>
             <p class="card-desc">Commitment-based passing for social robot navigation: temporally consistent left/right passing decisions with lexicographic safety. Nav2 controller plugin, Gazebo testbed, and paper (arXiv-ready).</p>
             <div class="card-chips chips">
@@ -155,6 +164,9 @@
           </article>
 
           <article class="card card-link reveal">
+            <div class="card-figure card-figure--tile">
+              <img src="assets/img/semppi-utrap.png" width="880" height="411" loading="lazy" decoding="async" alt="Simulation comparison from se-mppi-nav2: stock MPPI stalls inside a U-shaped obstacle trap while the escape-enabled controller detours around it and reaches the goal.">
+            </div>
             <h3 class="card-name">se-mppi-nav2</h3>
             <p class="card-desc">Nav2-native MPPI local controller: online local-minima detection-and-escape plus a dynamic-obstacle CBF safety filter, validated on a 1,200-trial randomized benchmark.</p>
             <div class="card-chips chips">
@@ -164,6 +176,12 @@
           </article>
 
           <article class="card card-link reveal">
+            <figure class="card-fig-wrap">
+              <div class="card-figure">
+                <img src="assets/img/amrstack-demo.png" width="880" height="670" loading="lazy" decoding="async" alt="A* path planned on a SLAM-built office map — simulation demo from amr_stack.">
+              </div>
+              <figcaption class="card-fig-cap">A* path planned on a SLAM-built office map — simulation demo from amr_stack.</figcaption>
+            </figure>
             <h3 class="card-name">amr_stack</h3>
             <p class="card-desc">A complete AMR software stack written from scratch: 2D sim, log-odds mapping, scan-matching SLAM, MCL, A*+DWA planning, nav FSM, HRI GUI, all in pure Python plus C++ ROS 2 ports.</p>
             <div class="card-chips chips">
@@ -173,6 +191,9 @@
           </article>
 
           <article class="card card-link reveal">
+            <div class="card-figure">
+              <img src="assets/img/roboops-dash.png" width="880" height="550" loading="lazy" decoding="async" alt="Operator-console dashboard screen from robo-ops: a fleet-status summary row, a per-robot state list, and a live alarm and event feed.">
+            </div>
             <h3 class="card-name">robo-ops</h3>
             <p class="card-desc">Operator console for AMR/AGV fleet control: 30 interactive screens (dashboard, live map, remote control, KPI analytics) as a fully client-side React 19 + TypeScript app.</p>
             <div class="card-chips chips">

@@ -61,10 +61,10 @@
 
         <p>There are two crowds in software right now: people who use foundation models (FMs) as autocomplete, and people who do hard systems work. The interesting place is the intersection — engineers who <em>orchestrate</em> models <strong>and</strong> ship real-time code that runs on a real machine. That intersection is where I work.</p>
 
-        <p>For the past several months I've been leading a multi-year migration of a legacy ROS 1 robot stack to a modular, middleware-agnostic ROS 2 (Jazzy) platform in C++20 — safety-critical software with real motion authority. I used foundation models to move fast on it. But "used AI" undersells what actually made it work. What made it work was the <strong>engineering system I built around the models</strong>. Here's how it fits together.</p>
+        <p>For the past several months I've been working on a multi-year replatforming of a robot stack onto a modular, middleware-agnostic ROS 2 platform in C++20, where I design and verify the core and led the ROS 2 Humble port — safety-critical software with real motion authority. I used foundation models to move fast on it. But "used AI" undersells what actually made it work. What made it work was the <strong>engineering system I built around the models</strong>. Here's how it fits together.</p>
 
         <h2><span class="h2-num">1.</span> The problem: speed without losing quality</h2>
-        <p>A safety-critical rewrite is exactly where naive AI use is dangerous. A model that confidently produces plausible-but-wrong motion code is worse than no model at all. So the goal wasn't "write code faster" — it was <em>ship a multi-year migration at a high cadence with no quality regressions</em>. That reframing drove every decision below.</p>
+        <p>A safety-critical rewrite is exactly where naive AI use is dangerous. A model that confidently produces plausible-but-wrong motion code is worse than no model at all. So the goal wasn't "write code faster" — it was <em>ship a multi-year replatforming at a high cadence with no quality regressions</em>. That reframing drove every decision below.</p>
 
         <h2><span class="h2-num">2.</span> The pipeline, not the prompt</h2>
         <p>Instead of prompting ad hoc, I run a multi-agent development pipeline: an orchestrator coordinates specialized sub-agents (one for review, one for auditing, others for focused tasks), with workflow loops and context isolation per task. The unit of work isn't "a chat" — it's a structured task with defined inputs, a verification step, and a record of what happened.</p>
@@ -124,7 +124,7 @@
             LinkedIn
           </a>
         </div>
-        <p class="smallprint">© 2026 Jung Mo Kang · Built by hand, no framework · <a href="https://github.com/kjungmo/kjungmo.github.io">Source on GitHub</a></p>
+        <p class="smallprint">© 2026 Jung Mo Kang · No framework, no trackers · <a href="https://github.com/kjungmo/kjungmo.github.io">Source on GitHub</a></p>
       </div>
     </div>
   </footer>

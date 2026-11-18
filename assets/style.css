@@ -596,6 +596,23 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .card-chips { margin-top: auto; }
 
+/* Preprint DOI row: last child of the card. The chips row (or the actions row
+   on the case-study card) already carries margin-top:auto, so this row is
+   pushed to the card bottom and aligns across a grid row. */
+.card-preprint {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+.card-preprint a {
+  position: relative;
+  z-index: 1;
+  color: var(--text-2);
+  border-bottom: 1px solid var(--accent-30);
+}
+.card-preprint a:hover { color: var(--accent); text-decoration: none; }
+
 /* Field-work card */
 .entry .entry-title {
   font-size: 18px;
@@ -628,6 +645,14 @@ ul { margin: 0; padding: 0; list-style: none; }
   border-radius: 999px;
   background: var(--accent);
   opacity: 0.7;
+}
+
+.entry .entry-note {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.55;
+  margin: 0;
+  opacity: 0.85;
 }
 
 /* How-I-Work — a principle spec-list, not a grid of identical cards.
@@ -951,6 +976,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   .js .grid .reveal:nth-child(4) { transition-delay: 180ms; }
   .js .grid .reveal:nth-child(5) { transition-delay: 240ms; }
   .js .grid .reveal:nth-child(6) { transition-delay: 300ms; }
+  .js .grid .reveal:nth-child(7) { transition-delay: 360ms; }
+  .js .grid .reveal:nth-child(8) { transition-delay: 420ms; }
 }
 
 /* ----- Responsive tweaks ---------------------------------------------------*/

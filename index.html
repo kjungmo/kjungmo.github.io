@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jung Mo Kang — Robotics Software Engineer</title>
-  <meta name="description" content="Robotics software engineer building autonomous mobile robots and the AI-native engineering systems that ship them safely. ROS 2, C++20, SLAM and navigation, open-source robotics.">
+  <meta name="description" content="Robotics software engineer building autonomous mobile robots and the AI-native engineering system that ships them safely. ROS 2, C++20, SLAM and navigation; four 2026 preprints and six open-source robotics projects.">
   <link rel="canonical" href="https://kjungmo.github.io/">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kjungmo.github.io/">
   <meta property="og:title" content="Jung Mo Kang — Robotics Software Engineer">
-  <meta property="og:description" content="Robotics software engineer building autonomous mobile robots and the AI-native engineering systems that ship them safely. ROS 2, C++20, SLAM and navigation, open-source robotics.">
+  <meta property="og:description" content="Robotics software engineer building autonomous mobile robots and the AI-native engineering system that ships them safely. ROS 2, C++20, SLAM and navigation; four 2026 preprints and six open-source robotics projects.">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Jung Mo Kang — Robotics Software Engineer">
-  <meta name="twitter:description" content="Robotics software engineer building autonomous mobile robots and the AI-native engineering systems that ship them safely. ROS 2, C++20, SLAM and navigation, open-source robotics.">
+  <meta name="twitter:description" content="Robotics software engineer building autonomous mobile robots and the AI-native engineering system that ships them safely. ROS 2, C++20, SLAM and navigation; four 2026 preprints and six open-source robotics projects.">
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
@@ -76,8 +76,7 @@
           <a href="https://github.com/kjungmo/strata">strata</a><span class="proof-sep" aria-hidden="true">·</span>
           <a href="https://github.com/kjungmo/compass">compass</a><span class="proof-sep" aria-hidden="true">·</span>
           <a href="https://github.com/kjungmo/se-mppi-nav2">se-mppi-nav2</a><span class="proof-sep" aria-hidden="true">·</span>
-          <a href="https://github.com/kjungmo/amr_stack">amr_stack</a><span class="proof-sep" aria-hidden="true">·</span>
-          <a href="https://github.com/kjungmo/robo-ops">robo-ops</a>
+          <a href="https://github.com/kjungmo/amr_stack">amr_stack</a>
         </div>
         <div class="hero-links reveal">
           <a href="https://github.com/kjungmo">
@@ -101,15 +100,15 @@
       <div class="container">
         <div class="stat">
           <div class="num">6 yrs</div>
-          <div class="label">building &amp; field-deploying robot software</div>
+          <div class="label">building and field-deploying robot software</div>
         </div>
         <div class="stat">
-          <div class="num">30+</div>
-          <div class="label">AMRs shipped into factory operation</div>
+          <div class="num">4</div>
+          <div class="label">first-author preprints published in 2026</div>
         </div>
         <div class="stat">
-          <div class="num">50+</div>
-          <div class="label">serving robots in real-world service</div>
+          <div class="num">5</div>
+          <div class="label">open-source robotics projects, all public</div>
         </div>
       </div>
     </section>
@@ -119,7 +118,7 @@
       <div class="container">
         <div class="section-head reveal">
           <h2 class="section-title" id="os-title">Robotics tools, built end-to-end</h2>
-          <p class="section-intro">Estimator cores kept free of middleware, ROS 2 wired in only at the edges, and every performance claim backed by tests plus committed evaluation artifacts, not screenshots.</p>
+          <p class="section-intro">Robotics tools I design and evaluate end-to-end: estimator cores kept middleware-free, ROS 2 at the edges, every claim backed by tests and committed evaluation artifacts. Implementation leans on AI coding tools; problem setting, architecture, experiment design, and result review are mine. Four of the five shipped as 2026 preprints (pre-peer-review), validated in simulation and on public datasets, not yet on a real vehicle.</p>
         </div>
 
         <div class="grid grid-os">
@@ -137,6 +136,7 @@
               <a class="card-action-primary" href="writing/prism-loc-localization.html">Read the case study →</a>
               <a class="card-action-secondary" href="https://github.com/kjungmo/prism_loc">GitHub</a>
             </div>
+            <p class="card-preprint"><a href="https://doi.org/10.20944/preprints202610.0391.v1" aria-label="prism_loc preprint, 2026, DOI">Preprint 2026 · DOI</a></p>
           </article>
 
           <article class="card card-link reveal">
@@ -149,18 +149,20 @@
               <span class="chip">ROS 2</span><span class="chip">mapping</span><span class="chip">lifelong</span>
             </div>
             <a class="stretched" href="https://github.com/kjungmo/strata" aria-label="strata on GitHub"></a>
+            <p class="card-preprint"><a href="https://doi.org/10.20944/preprints202610.2339.v1" aria-label="strata preprint, 2026, DOI">Preprint 2026 · DOI</a></p>
           </article>
 
           <article class="card card-link reveal">
             <div class="card-figure card-figure--tile">
-              <img src="assets/img/compass-costfield.png" width="880" height="377" loading="lazy" decoding="async" alt="Figure from compass: the asymmetric social cost field around a moving person, wider in front than behind, shown at a near and a far prediction horizon.">
+              <img src="assets/img/compass-costfield.png" width="880" height="377" loading="lazy" decoding="async" alt="Figure from compass: the asymmetric social cost field around a moving person, wider in front than behind, shown at a near and a far prediction horizon. Conceptual diagram, not measured data.">
             </div>
             <h3 class="card-name">compass</h3>
-            <p class="card-desc">Commitment-based passing for social robot navigation: temporally consistent left/right passing decisions with lexicographic safety. Nav2 controller plugin, Gazebo testbed, and paper (arXiv-ready).</p>
+            <p class="card-desc">Commitment-based passing for social robot navigation: temporally consistent left/right passing decisions with lexicographic safety. Nav2 controller plugin, Gazebo testbed, and the paper.</p>
             <div class="card-chips chips">
               <span class="chip">Nav2 plugin</span><span class="chip">social navigation</span><span class="chip">paper</span>
             </div>
             <a class="stretched" href="https://github.com/kjungmo/compass" aria-label="compass on GitHub"></a>
+            <p class="card-preprint"><a href="https://doi.org/10.20944/preprints202610.0120.v1" aria-label="compass preprint, 2026, DOI">Preprint 2026 · DOI</a></p>
           </article>
 
           <article class="card card-link reveal">
@@ -173,14 +175,15 @@
               <span class="chip">MPPI</span><span class="chip">CBF</span><span class="chip">benchmark</span>
             </div>
             <a class="stretched" href="https://github.com/kjungmo/se-mppi-nav2" aria-label="se-mppi-nav2 on GitHub"></a>
+            <p class="card-preprint"><a href="https://doi.org/10.20944/preprints202611.0375.v1" aria-label="se-mppi-nav2 preprint, 2026, DOI">Preprint 2026 · DOI</a></p>
           </article>
 
           <article class="card card-link reveal">
             <figure class="card-fig-wrap">
               <div class="card-figure">
-                <img src="assets/img/amrstack-demo.png" width="880" height="670" loading="lazy" decoding="async" alt="A* path planned on a SLAM-built office map — simulation demo from amr_stack.">
+                <img src="assets/img/amrstack-demo.png" width="880" height="670" loading="lazy" decoding="async" alt="A* path planned on a SLAM-built office map: simulation demo from amr_stack.">
               </div>
-              <figcaption class="card-fig-cap">A* path planned on a SLAM-built office map — simulation demo from amr_stack.</figcaption>
+              <figcaption class="card-fig-cap">A* path planned on a SLAM-built office map: simulation demo from amr_stack.</figcaption>
             </figure>
             <h3 class="card-name">amr_stack</h3>
             <p class="card-desc">A complete AMR software stack written from scratch: 2D sim, log-odds mapping, scan-matching SLAM, MCL, A*+DWA planning, nav FSM, HRI GUI, all in pure Python plus C++ ROS 2 ports.</p>
@@ -188,18 +191,6 @@
               <span class="chip">from scratch</span><span class="chip">SLAM</span><span class="chip">planning</span>
             </div>
             <a class="stretched" href="https://github.com/kjungmo/amr_stack" aria-label="amr_stack on GitHub"></a>
-          </article>
-
-          <article class="card card-link reveal">
-            <div class="card-figure">
-              <img src="assets/img/roboops-dash.png" width="880" height="550" loading="lazy" decoding="async" alt="Operator-console dashboard screen from robo-ops: a fleet-status summary row, a per-robot state list, and a live alarm and event feed.">
-            </div>
-            <h3 class="card-name">robo-ops</h3>
-            <p class="card-desc">Operator console for AMR/AGV fleet control: 30 interactive screens (dashboard, live map, remote control, KPI analytics) as a fully client-side React 19 + TypeScript app.</p>
-            <div class="card-chips chips">
-              <span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">fleet ops</span>
-            </div>
-            <a class="stretched" href="https://github.com/kjungmo/robo-ops" aria-label="robo-ops on GitHub"></a>
           </article>
         </div>
 
@@ -217,11 +208,39 @@
 
         <div class="grid grid-field">
           <article class="card entry reveal">
+            <h3 class="entry-title">Delivery-robot platform: C++20 core + ROS 2</h3>
+            <p class="entry-role">Current work. Core design and verification; led the ROS 2 Humble port</p>
+            <ul class="bullets">
+              <li>Designed and verified a middleware-decoupled C++20 robot core for indoor-outdoor delivery robots: comms, task execution, layered config, logging and telemetry, health monitoring, and a motion-authority gate, with ROS 2 kept at a boundary layer.</li>
+              <li>Picked the IPC by measuring three candidates under identical conditions on Jetson Orin (large-map request latency, message loss, CPU load) and adopted shared memory; long-run tests after adoption showed no shared-memory leaks and no event loss.</li>
+              <li>Led the ROS 2 Humble port: 14 core packages moved from Jazzy/24.04 with zero functional-test failures, and 4 legacy ROS 1 driver packages swept with AI multi-agent review, defect fixes (including critical ones) applied after my review (2 build-verified, pre-vehicle-validation).</li>
+              <li>On the real vehicle: control-period recovery plus a braking governor, stopping distance measured over three runs at 1.0 m/s, and hard-stop frequency reduced on close wall-following passes (same-day two-run comparison).</li>
+            </ul>
+            <p class="entry-note">Implementation uses AI coding tools; design, interface definitions, test conditions, code review, and verification are mine. Localization and mapping modules are a colleague's.</p>
+            <div class="card-chips chips">
+              <span class="chip">C++20</span><span class="chip">ROS 2</span><span class="chip">iceoryx2</span><span class="chip">Jetson Orin</span>
+            </div>
+          </article>
+
+          <article class="card entry reveal">
+            <h3 class="entry-title">CAD drawings to robot maps</h3>
+            <p class="entry-role">Site-deployment tooling, built solo</p>
+            <ul class="bullets">
+              <li>Built a tool chain that turns construction CAD drawings of a large residential complex into fleet-control map layers (GeoJSON, SVG, PNG+YAML) and ROS occupancy maps, classifying walls, doors, auto-doors, and tactile paving from layer-name and shape rules.</li>
+              <li>Registered CAD, SLAM, and LiDAR data in one frame with an independent cross-check, and wrote the format spec for the fleet-control map files. Drawing cleanup and layer classification run automatically; map export is a separate step, and complex setup plus per-floor verification stay manual.</li>
+              <li>Handed over as tools plus manuals: a rerun following only the manuals reproduced the drawing-cleanup output pixel-for-pixel. The same CAD output seeds a MuJoCo simulation world (auto-doors included) with pedestrian scenarios. Not yet applied to the real vehicle, the fleet-control program, or other sites.</li>
+            </ul>
+            <div class="card-chips chips">
+              <span class="chip">CAD</span><span class="chip">occupancy maps</span><span class="chip">GeoJSON</span><span class="chip">MuJoCo</span>
+            </div>
+          </article>
+
+          <article class="card entry reveal">
             <h3 class="entry-title">Factory logistics automation: AMR fleet</h3>
             <p class="entry-role">AMR software engineer, on-site deployment</p>
             <ul class="bullets">
               <li>Built ROS-based AMR autonomy and the fleet-side ACS bridge protocol (WebSocket) connecting robots to the plant control system.</li>
-              <li>Automated mass installation and mapping/logging workflows, making a 30+ robot rollout at an overseas factory repeatable. The protocol carried the project into commercial rollout.</li>
+              <li>Automated mass installation and mapping/logging workflows, making the robot rollout at an overseas factory repeatable. The protocol carried the project into commercial rollout.</li>
               <li>Lived on-site for months of bring-up: crash triage with gdb, alarm-code and charging-sequence fixes on real hardware.</li>
             </ul>
             <div class="card-chips chips">
@@ -254,11 +273,12 @@
           </article>
 
           <article class="card entry reveal">
-            <h3 class="entry-title">Airport guide robot + Android SDK</h3>
-            <p class="entry-role">SDK review, extension &amp; robot integration</p>
+            <h3 class="entry-title">Airport guide robot: fleet-control integration + Android SDK</h3>
+            <p class="entry-role">Robot-side SDK, API, and vendor coordination</p>
             <ul class="bullets">
-              <li>Reviewed, fixed, and extended an initial Kotlin Android SDK (rosbridge WebSocket, Coroutines/Flow, MVVM) so external apps can command ROS robots; tightened API and data contracts and shipped releases with integration docs.</li>
-              <li>Took part in airport guide/patrol robot and fleet-management development, improved the tray LED logic, and joined an airport digital-twin project.</li>
+              <li>Owned the robot-side SDK and API between the robots and an external vendor's fleet-control server: took the Kotlin SDK over after an outsourced first implementation, developed it onward (80 commits), and shipped v2.0 to v2.3.3 with waypoint driving, alarm codes, docking and self-diagnosis reporting, person following, and video streaming.</li>
+              <li>Wrote the robot-side API docs (v0.1 to v0.3) and coordinated the integration contract with the vendor: status polling, arrival-to-idle transition, ETA, waypoints, resume-after-E-stop. Reproduced an arrival-state miss on site and fixed its cause, a legacy GUI wait setting overriding the site configuration.</li>
+              <li>39 days on-site at the airport; selected, managed, and reviewed the outsourced developer. Also designed the robots' operational error-code scheme (subsystem and severity bands).</li>
             </ul>
             <div class="card-chips chips">
               <span class="chip">Kotlin</span><span class="chip">Android</span><span class="chip">SDK</span><span class="chip">fleet integration</span>
@@ -335,7 +355,7 @@
           <article class="featured reveal">
             <p class="featured-label">FEATURED WRITEUP</p>
             <h3 class="featured-title">How I Engineer with Foundation Models on a Safety-Critical Robot</h3>
-            <p class="featured-dek">Not the prompts: the pipeline, the gates, and the judgment. How a multi-year ROS 1 → ROS 2 migration ships fast without losing quality.</p>
+            <p class="featured-dek">Not the prompts: the pipeline, the gates, and the judgment. How a safety-critical robot platform ships fast without losing quality.</p>
             <a class="featured-cta" href="writing/fm-engineering.html">Read the article →</a>
           </article>
 
@@ -358,15 +378,15 @@
 
         <div class="about-grid">
           <div class="about-bio reveal">
-            <p>I'm a robotics software engineer with six years building and deploying autonomous mobile robots across smart-factory, logistics, mobility-assistance, airport, and food-service settings. I've shipped 30+ AMRs and 50+ serving robots into real-world operation.</p>
-            <p>I solve at the system level: onboard autonomy, fleet and control-system integration, GUIs, and communication protocols, not just at the code level. Right now I'm leading a multi-year migration of a legacy ROS 1 robot stack to a modular, middleware-agnostic ROS 2 platform in C++20, owning it from architecture through release. Before software, I trained in international trade, and I bring that domain-first habit of thinking to engineering.</p>
+            <p>I'm a robotics software engineer with six years building and deploying autonomous mobile robots across smart-factory, logistics, mobility-assistance, airport, and food-service settings.</p>
+            <p>I solve at the system level: onboard autonomy, fleet and control-system integration, GUIs, and communication protocols, not just at the code level. Right now I design and verify the C++20 core of a next-generation delivery-robot platform and led its ROS 2 Humble port. Implementation uses AI coding tools; design, interface definitions, test conditions, code review, and real-vehicle verification are mine. Before software, I trained in international trade, and I bring that domain-first habit of thinking to engineering.</p>
             <p>What drives me is turning robots from research demos into products that actually work on the floor.</p>
           </div>
           <div class="about-side reveal">
             <div class="about-block">
               <h3>Core stack</h3>
               <div class="chips">
-                <span class="chip">C++20</span><span class="chip">ROS 2</span><span class="chip">Python</span><span class="chip">Kotlin</span><span class="chip">SLAM &amp; navigation</span><span class="chip">Nav2</span><span class="chip">DDS</span><span class="chip">Linux</span><span class="chip">Docker</span><span class="chip">CI/CD</span><span class="chip">multi-agent AI tooling</span>
+                <span class="chip">C++20</span><span class="chip">ROS 2</span><span class="chip">Python</span><span class="chip">Kotlin</span><span class="chip">SLAM &amp; navigation</span><span class="chip">Nav2 (personal projects)</span><span class="chip">shared-memory IPC</span><span class="chip">Jetson</span><span class="chip">Linux</span><span class="chip">Docker</span><span class="chip">CI/CD</span><span class="chip">multi-agent AI tooling</span>
               </div>
             </div>
             <div class="about-block">
@@ -400,7 +420,7 @@
             LinkedIn
           </a>
         </div>
-        <p class="smallprint">© 2026 Jung Mo Kang · Built by hand, no framework · <a href="https://github.com/kjungmo/kjungmo.github.io">Source on GitHub</a></p>
+        <p class="smallprint">© 2026 Jung Mo Kang · No framework, no trackers · <a href="https://github.com/kjungmo/kjungmo.github.io">Source on GitHub</a></p>
       </div>
     </div>
   </footer>
